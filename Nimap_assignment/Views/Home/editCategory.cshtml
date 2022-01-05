@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Nimap_assignment.Models.Category>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            @foreach (var list in Model)
+            {
+                <form action="/Home/UpdateCategory" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Category Name</label>
+                        <input type="text" name="categoryname" class="form-control" value="@Html.DisplayFor(ModelItem => list.categoryname)" required>
+<input  type="hidden" value="@Html.DisplayFor(ModelItem => list.id)" name="id">
+                    </div>
+
+                    <input type="submit" class="btn btn-primary" value="submit">
+
+                </form>
+            }
+            </div>
+        
+    </div>
+</div>
+

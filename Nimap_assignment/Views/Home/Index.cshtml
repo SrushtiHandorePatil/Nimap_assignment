@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Nimap_assignment.Models.Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table, th, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        background-color: #96D4D4;
+    }
+</style>
+<div class="container">
+   
+            <table class="table" id="dataTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Product ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Category ID</th>
+                        <th scope="col">Category Name</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var list in Model)
+                    {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(ModelItem => list.id)</th>
+                        <td>@Html.DisplayFor(ModelItem => list.productname)</td>
+                        <td>@Html.DisplayFor(ModelItem => list.categoryid)</td>
+                        <td>@Html.DisplayFor(ModelItem => list.categoryname)</td>
+                       
+
+                    </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+   
+</div>
+
